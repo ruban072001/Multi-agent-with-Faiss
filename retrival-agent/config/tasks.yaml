@@ -1,0 +1,45 @@
+query_parser_agent_task:
+  description: >
+    Analyze user queries {query} to extract essential keywords, topics, 
+    and intent while discarding irrelevant or redundant information.
+
+  expected_output: >
+    A structured representation of the user query, including extracted key terms and intent.
+
+  agent: query_parser_agent
+
+
+retriever_agent_task:
+  description: >
+    Use the extracted key terms from the Query Parser to search through a 
+    document database and return a list of documents that are relevant to the query.
+    Use the document search tool for retrieving relevant information from the database.
+
+  expected_output: >
+    A list of documents or file references that are highly relevant to the user query.
+
+  agent: retriever_agent
+
+
+ranker_agent_task:
+  description: >
+    Analyze the retrieved documents using relevance scoring techniques 
+    and rank them in descending order of their relevance to the query {query}.
+
+  expected_output: >
+    An ordered list of documents ranked by their relevance to the user query.
+
+  agent: ranker_agent
+
+
+response_generator_agent_task:
+  description: >
+    Use the top-ranked documents to generate a summarized or synthesized response that directly 
+    addresses the user query {query}. Don't Make up anything on your own, you just need to give Final Answer 
+    based on the retrieved content.
+
+  expected_output: >
+    A concise and well-structured answer to the user query, 
+    supported by information from the top-ranked documents.
+
+  agent: response_generator_agent
