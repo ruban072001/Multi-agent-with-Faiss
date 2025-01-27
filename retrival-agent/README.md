@@ -57,3 +57,18 @@ Follow these steps to set up and run AgenticCrew:
 ### **1. Clone the Repository**  
 ```bash
 git clone https://github.com/your-username/AgenticCrew.git
+
+### **2. Install Dependencies**
+Navigate to the project directory and install the required dependencies:
+```bash
+pip install -r requirements.txt
+
+### **2. Set Up Environment Variables**
+Create a .env file in the project directory and configure your environment variables as required by the system.
+
+### **2. Run the Application**
+Execute the main application using the following command:
+```bash
+python -m streamlit run main.py
+
+
